@@ -34,3 +34,16 @@ To add new tags, derive a class from `postmarkup.TagBase`, and add it to a postm
 
 See `postmarkup.py` for details on implementing tags.
 
+= Unicode =
+
+Postmarkup will output a unicode string if the input is a unicode string. Alternatively you can pass in a non-unicode string and the encoding. The following is an example of both methods.
+
+{{{
+from postmarkup import render_bbcode
+render_bbcode(u"[i]A Unicode string[/i]")
+render_bbcode("[i]A UTF-8 string encoded as an 8-bit string.[/i]", "UTF-8")
+}}}
+
+= Syntax Highlighting =
+
+Postmarkup can syntax highlight the `[code][/code]` tag with [http://pygments.org/ Pygments]. If you use syntax highlighting you will need `code.css` from Downloads.
